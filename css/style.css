@@ -1,0 +1,105 @@
+body, html {
+  width      : 100%;
+  height     : 100%;
+  margin     : 0px;
+  padding    : 0px;
+  font-family: "Roboto Mono", monospace;
+  color      : #f4defa;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#header {
+  background : rgba(0, 0, 0, 0.8);
+  padding    : 16px 24px 24px 24px;
+  line-height: 38px;
+  position   : absolute;
+  font-weight: 100;
+  font-size  : 2rem;
+  left       : 5rem;
+  top        : 5rem;
+}
+
+#zine-label {
+  margin-bottom: 32px;
+}
+
+#zine-label:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#issue-label {
+  font-size: 1rem;
+}
+
+#title-container {
+  position      : absolute;
+  color         : #f4defa;
+  text-align    : left;
+  font-size     : 10rem;
+  left          : 5rem;
+  width         : 500px;
+  height        : 200px;
+  font-style    : italic;
+  top           : 35%;
+  letter-spacing: 2px;
+  font-weight   : 300;
+  line-height   : 180px;
+}
+
+#contributor-btn {
+  position      : absolute;
+  padding       : 16px;
+  background    : rgba(0, 0, 0, 0.8);
+  left          : 6rem;
+  text-transform: uppercase;
+  font-weight   : bold;
+  bottom        : 16rem;
+  border        : 2px solid #f4defa;
+}
+
+#contributor-btn:hover {
+  cursor: pointer;
+  background: rgba(244, 222, 250, 0.9);
+  color: black;
+}
+
+#quote-container {
+  position      : absolute;
+  width         : 500px;
+  background    : rgba(0, 0, 0, 0.8);
+  padding       : 8px 24px 24px 24px;
+  font-style    : italic;
+  right         : 6rem;
+  top           : 50%;
+  text-transform: uppercase;
+  font-size     : 0.9rem;
+  transform     : translateY(-50%);
+  letter-spacing: 1.7px;
+}
+
+#quote:before {
+  content: open-quote;
+  margin-right: 4px;
+}
+
+#quote:after {
+  content: close-quote;
+}
+
+#citation {
+  text-align: right;
+}
+
+#deco-line {
+  position     : relative;
+  width        : 40px;
+  height       : 2px;
+  margin-top   : -2px;
+  border-radius: 2px;
+  background   : white;
+}
