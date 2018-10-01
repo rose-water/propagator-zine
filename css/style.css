@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   width      : 100%;
   height     : 100%;
@@ -5,6 +9,7 @@ body, html {
   padding    : 0px;
   font-family: "Roboto Mono", monospace;
   color      : #f4defa;
+  background: black;
 }
 
 canvas {
@@ -12,19 +17,35 @@ canvas {
   height: 100%;
 }
 
+#content-container {
+  /* filter: blur(16px); */
+  position: absolute;
+  width   : calc(100% - 128px);
+  height  : calc(100% - 128px);
+  top     : 64px;
+  left    : 64px;
+}
+
 #header {
   background : rgba(0, 0, 0, 0.8);
   padding    : 16px 24px 24px 24px;
-  line-height: 38px;
-  position   : absolute;
   font-weight: 100;
-  font-size  : 2rem;
-  left       : 5rem;
-  top        : 5rem;
+  font-size  : 1.5vw;
+  position   : relative;
+  max-width: 300px;
+}
+
+#left, #right {
+  width: 50%;
+
+}
+
+#right {
+  position: relative;
 }
 
 #zine-label {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 #zine-label:hover {
@@ -33,53 +54,68 @@ canvas {
 }
 
 #issue-label {
-  font-size: 1rem;
+  font-size: 0.5em;
 }
 
 #title-container {
-  position      : absolute;
+  position      : relative;
   color         : #f4defa;
-  text-align    : left;
-  font-size     : 10rem;
-  left          : 5rem;
-  width         : 500px;
-  height        : 200px;
+  font-size     : 9vw;
   font-style    : italic;
-  top           : 35%;
   letter-spacing: 2px;
   font-weight   : 300;
-  line-height   : 180px;
+  text-shadow   : 5px 5px 1px #461e7b;
 }
 
-#contributor-btn {
-  position      : absolute;
-  padding       : 16px;
+#title-quote-container {
+  display  : flex;
+  flex-wrap: wrap;
+  position : absolute;
+  top      : 50%;
+  transform: translateY(-50%);
+  width    : 100%;
+}
+
+#contributor-btn, #get-involved-btn {
+  position      : relative;
+  min-width     : 220px;
+  padding       : 12px;
+  text-align    : center;
   background    : rgba(0, 0, 0, 0.8);
-  left          : 6rem;
   text-transform: uppercase;
   font-weight   : bold;
-  bottom        : 16rem;
   border        : 2px solid #f4defa;
+  font-size     : 14px;
+  display       : inline-block;
+  margin-top    : 24px;
 }
 
-#contributor-btn:hover {
+#btn-container {
+  margin-top: 64px;
+  position: relative;
+  width: 100%;
+}
+
+#contributor-btn:hover,
+#get-involved-btn:hover {
   cursor: pointer;
   background: rgba(244, 222, 250, 0.9);
   color: black;
 }
 
 #quote-container {
-  position      : absolute;
-  width         : 500px;
+  max-width     : 75%;
   background    : rgba(0, 0, 0, 0.8);
   padding       : 8px 24px 24px 24px;
   font-style    : italic;
-  right         : 6rem;
-  top           : 50%;
   text-transform: uppercase;
-  font-size     : 0.9rem;
+  font-size     : 1vw;
+  letter-spacing: 1.1px;
+  font-weight   : 300;
+  position      : absolute;
+  right         : 0;
+  top           : 50%;
   transform     : translateY(-50%);
-  letter-spacing: 1.7px;
 }
 
 #quote:before {
@@ -99,7 +135,74 @@ canvas {
   position     : relative;
   width        : 40px;
   height       : 2px;
-  margin-top   : -2px;
+  margin-top   : 6px;
   border-radius: 2px;
   background   : white;
+}
+
+#contributor-call {
+  width     : 100%;
+  height    : 100%;
+  position  : absolute;
+  background: rgba(0, 0, 0, 0.5);
+  padding   : 128px;
+  display   : none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1200px) {
+
+  #content-container {
+    top: 32px;
+    bottom: 32px;
+  }
+
+  #title-container {
+    font-size : 18vw;
+    text-align: center;
+  }
+
+  #zine-label {
+    font-weight: 400;
+  }
+
+  #issue-label {
+    font-size: 3vw;
+  }
+
+  #header {
+    font-size: 5vw;
+    max-width: 48%;
+    padding: 24px 32px 32px 32px;
+  }
+
+  #left, #right {
+    width: 100%;
+  }
+
+  #title-quote-container {
+    top: 60%;
+  }
+
+  #quote-container {
+    padding-bottom: 32px;
+    position  : relative;
+    width     : 100%;
+    max-width : 100%;
+    margin-top: 40px;
+    font-size : 3vw;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  #citation {
+    text-align: center;
+  }
+
+  #contributor-btn,
+  #get-involved-btn {
+    width         : 100%;
+    font-size     : 3vw;
+    font-weight   : 400;
+    padding       : 32px;
+  }
 }
