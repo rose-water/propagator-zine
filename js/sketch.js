@@ -37,9 +37,18 @@ function getRandomColor() {
 }
 
 // -------------------------------------------------------
+function toggleCallOpen() {
+	let call = document.getElementById('contributor-call');
+	let content = document.getElementById('content-container');
+	content.style.filter = "blur(16px)";
+	call.style.display = "block";
+}
+
+// -------------------------------------------------------
 function render() {
 	ctx.fillStyle = "#060109";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	ctx.fillStyle = "#a884a6";
 	metaball.update(canvas.width, canvas.height, 16);
 	requestAnimationFrame(render);
 }
@@ -72,7 +81,7 @@ function Metaball(size, ctx, width, height) {
   
   // -------------------------------------------------------
 	this.update = function(width, height, increment) {
-    this.ctx.fillStyle = "#a884a6";
+    
 		for (let x = 0; x < width; x += increment){
 			for (let y = 0; y < height; y += increment){
 				let s = 0;
@@ -83,9 +92,9 @@ function Metaball(size, ctx, width, height) {
 				} 
         
 				if (s < this.threshold) {
-					this.ctx.fillRect(x, y, Math.random() * 50, 1);
+					this.ctx.fillRect(x, y, Math.random() * 100, 0.8);
 				} else {
-					this.ctx.fillRect(x + Math.random(-8, 8), y + Math.random(-8, 8), 1, 15);
+					this.ctx.fillRect(x + Math.random(-8, 8), y + Math.random(-8, 8), 1,10);
 				}
 			}
 		}
@@ -111,5 +120,8 @@ function Metaball(size, ctx, width, height) {
     } else if (ball.center[1] > this.height) {
       ball.center[1] = 0;
     }
-  }
+	}
+	
+	// -------------------------------------------------------
+
 }

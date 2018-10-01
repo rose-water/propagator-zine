@@ -18,7 +18,6 @@ canvas {
 }
 
 #content-container {
-  /* filter: blur(16px); */
   position: absolute;
   width   : calc(100% - 128px);
   height  : calc(100% - 128px);
@@ -71,7 +70,7 @@ canvas {
   display  : flex;
   flex-wrap: wrap;
   position : absolute;
-  top      : 50%;
+  top      : 58%;
   transform: translateY(-50%);
   width    : 100%;
 }
@@ -144,16 +143,29 @@ canvas {
   width     : 100%;
   height    : 100%;
   position  : absolute;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   padding   : 128px;
   display   : none;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 1200px) {
+#contributor-call-inner {
+  padding: 64px;
+  border: 4px solid #f4defa;
+}
+
+#call-content {
+  font-weight: 300;
+  line-height: 28px;
+  width: 60%;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 900px) {
 
   #content-container {
-    top: 32px;
+    top: 48px;
     bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   #title-container {
