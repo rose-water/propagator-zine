@@ -37,11 +37,32 @@ function getRandomColor() {
 }
 
 // -------------------------------------------------------
-function toggleCallOpen() {
+function toggleAboutVisible(setToOpen) {
+	let about = document.getElementById('propagator-about');
+	let content = document.getElementById('content-container');
+
+	if (setToOpen) {
+		about.style.display = "block";
+		content.style.filter = "blur(16px)";
+
+	} else {
+		about.style.display = "none";
+		content.style.filter = "none";
+	}
+}
+
+// -------------------------------------------------------
+function toggleCallVisible(setToOpen) {
 	let call = document.getElementById('contributor-call');
 	let content = document.getElementById('content-container');
-	content.style.filter = "blur(16px)";
-	call.style.display = "block";
+	
+	if (setToOpen) {
+		content.style.filter = "blur(16px)";
+		call.style.display = "block";
+	} else {
+		content.style.filter = "none";
+		call.style.display = "none";
+	}
 }
 
 // -------------------------------------------------------

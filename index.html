@@ -1,6 +1,6 @@
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
   <title>PROPAGATOR Issue 01 Dream Machine</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -9,52 +9,98 @@
   
   <div id="content-container">
     <div id="header">
-      <div id="zine-label">PROPAGATOR</div>
+      <div id="zine-label" onclick="toggleAboutVisible(true)">PROPAGATOR</div>
       <span id="issue-label">ISSUE 01</span>
       <div id="deco-line"></div>
     </div>
-    
+
     <div id="title-quote-container">
       <div class="row" id="left">
         <div id="title-container">DREAM MACHINE</div>
       </div>
-
+      
       <div class="row" id="right">
         <div id="quote-container">
           <p id="quote">Don't you think dreams and the internet are similar? They're both areas where the repressed conscious mind vents.</p>
           <div id="citation">- Paprika (dir. Satoshi Kon, 2006)</div>
         </div>    
       </div>
-
+      
       <div id="btn-container">
-        <div id="contributor-btn" onclick="toggleCallOpen();">
+        <div id="contributor-btn" onclick="toggleCallVisible(true);">
           call for contributors
         </div>
-        <div id="get-involved-btn">
+        <!-- <div id="get-involved-btn">
           get involved
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
   
+  <div id="propagator-about">
+    <div id="propagator-about-inner">
+      <!-- Close icon -->
+      <?xml version="1.0" encoding="UTF-8"?>
+      <svg class="close-icon" onclick="toggleAboutVisible(false);" width="36px" height="36px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs></defs>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <path d="M3.65625,0.96875 C2.50224182,1.09246935 1.5230965,1.87067181 1.14206781,2.96696488 C0.761039117,4.06325795 1.0464787,5.28098077 1.875,6.09375 L31.75,36 L1.875,65.875 C1.03853544,66.6163417 0.683497891,67.7611903 0.953722961,68.8457358 C1.22394803,69.9302812 2.07463394,70.7747121 3.16114413,71.0369259 C4.24765432,71.2991397 5.38985159,70.9356629 6.125,70.09375 L36,40.21875 L65.875,70.09375 C66.6101484,70.9356629 67.7523457,71.2991397 68.8388559,71.0369259 C69.9253661,70.7747121 70.776052,69.9302812 71.046277,68.8457358 C71.3165021,67.7611903 70.9614646,66.6163417 70.125,65.875 L40.25,36 L70.125,6.09375 C71.0479328,5.19380819 71.29286,3.80490928 70.7334286,2.64355803 C70.1739972,1.48220678 68.9352574,0.808001093 67.65625,0.96875 C66.9763804,1.05839365 66.3477354,1.3782306 65.875,1.875 L36,31.75 L6.125,1.875 C5.48536453,1.20914397 4.57477356,0.874876403 3.65625,0.96875 Z" id="Shape" fill="#f4defa" fill-rule="nonzero"></path>
+        </g>
+      </svg>
+      <h1>ABOUT</h1>
+      <div id="about-content">
+        <p>
+          PROPAGATOR is a collaborative zine, handmade and stitched together by a group of friends working in creative disciplines across art, design, and technology. Its inception came out of a need for time and space - for experimenting and engaging with different approaches to creating art, for expanding our horizons and creative practices, and most importantly, to develop a better understanding of ourselves and our place in the world.
+        </p>
+        <p>
+          In launching PROPAGATOR we present our first issue, <i>"DREAM MACHINE"</i>. What follows is a collection of fragments and artworks from several weeks of dream journaling.
+        </p>
+        <p>
+          If you would like to get involved, please email us at <a href="mailto:propagator.zine@gmail.com">propagator.zine@gmail.com</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div id="contributor-call">
     <div id="contributor-call-inner">
+      <!-- Close icon -->
+      <?xml version="1.0" encoding="UTF-8"?>
+      <svg class="close-icon" onclick="toggleCallVisible(false);" width="36px" height="36px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs></defs>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <path d="M3.65625,0.96875 C2.50224182,1.09246935 1.5230965,1.87067181 1.14206781,2.96696488 C0.761039117,4.06325795 1.0464787,5.28098077 1.875,6.09375 L31.75,36 L1.875,65.875 C1.03853544,66.6163417 0.683497891,67.7611903 0.953722961,68.8457358 C1.22394803,69.9302812 2.07463394,70.7747121 3.16114413,71.0369259 C4.24765432,71.2991397 5.38985159,70.9356629 6.125,70.09375 L36,40.21875 L65.875,70.09375 C66.6101484,70.9356629 67.7523457,71.2991397 68.8388559,71.0369259 C69.9253661,70.7747121 70.776052,69.9302812 71.046277,68.8457358 C71.3165021,67.7611903 70.9614646,66.6163417 70.125,65.875 L40.25,36 L70.125,6.09375 C71.0479328,5.19380819 71.29286,3.80490928 70.7334286,2.64355803 C70.1739972,1.48220678 68.9352574,0.808001093 67.65625,0.96875 C66.9763804,1.05839365 66.3477354,1.3782306 65.875,1.875 L36,31.75 L6.125,1.875 C5.48536453,1.20914397 4.57477356,0.874876403 3.65625,0.96875 Z" id="Shape" fill="#f4defa" fill-rule="nonzero"></path>
+        </g>
+      </svg>
+      
       <h1>CALL FOR CONTRIBUTORS</h1>
       <div id="call-content">
         <p>
-          Our dreams are trying to tell us something - about ourselves, how we see the world, and our place in it.
+          Our dreams are trying to tell us something about ourselves.
+        </p>
+        
+        <p>
+          In dream state, our minds become untethered, free to play out the scenarios we make up in our heads; to live in other realities, under different identities. It's the means by which our subconscious attempts to peek into what (we) could have been and what (we) could be - in the near future, or maybe in another lifetime or parallel universe. 
+        </p>
+        
+        <p>  
+          Our dreams are a more than a coping mechanism for our lived realities. While our dreams aren't always exciting and vivid, even our most mundane dreams might reveal some of our deepest (darkest?) desires. 
+        </p>
+        
+        <p>
+          They often speak to us in metaphors, through amalgams of fragmented, complex, even nonsensical visual imagery. It's what makes remembering a dream a lot like holding water in cupped hands. What makes them even more complex is the fact that our dreams can transcend time and space. The events that unfold aren't necessarily happening sequentially - and maybe they suspend time altogether.
         </p> 
         
         <p>
-          In dream state, our minds become untethered, free to play out those scenarios we make up in our heads; to live in other realities, under different identities. A method of trying to peek into what (we) could have been and what (we) could be in another lifetime or parallel universe. Perhaps dreams are a coping mechanism for our lived realities.
-        </p>
-  
-        <p>
-          Trying to remember a dream feels like holding water in cupped hands. They speak to us in metaphors, through amalgams of fragmented, complex, and often times nonsensical visual imagery. Of course, not all dreams are exciting and vivid, but even our most mundane dreams might reveal some of our deepest (darkest?) desires. 
+          In this issue we attempt dream journaling as a way to gain more control over our subconsciousness. If it will help us develop a better understanding of ourselves, it can only help us in our creative practices. For several weeks, contributors will keep a dream journal and create a piece of work from their entries. 
         </p>
         
         <p>
-          In this issue we attempt dream journaling as a way to gain more control over our subconsciousness. For several weeks, contributors will keep a dream journal and create a piece of work from their entries.
+          The output can be anything - a poem, an architectural drawing, a comic, anything - and does not need to be tied to what you do in your current practice/occupation (though we do encourage contributors to try new approaches to creating if they are up for it).
+        </p>
+        
+        <p>
+          If you are interested in participating, please email: <a href="mailto:propagator.zine@gmail.com">propagator.zine@gmail.com</a> for more information.
         </p>
       </div>      
     </div>
