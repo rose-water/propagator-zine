@@ -162,10 +162,25 @@ canvas {
   margin-top: 0px;
 }
 
-#call-content, #about-content {
+#about-content {
   font-weight: 300;
   line-height: 28px;
   width: 100%;
+}
+
+#call-content {
+  font-weight: 300;
+  line-height: 28px;
+  width: 50%;
+  float: left;
+}
+
+#call-form {
+  width: 40%;
+  font-weight: 300;
+  line-height: 28px;
+  float: right;
+  vertical-align: top;
 }
 
 #call-content > p, #about-content > p {
@@ -185,6 +200,36 @@ canvas {
 
 .close-icon:hover {
   cursor: pointer;
+}
+
+#disclosure {
+  font-size: 0.8em;
+}
+
+input {
+  font-family: "Roboto Mono", monospace;
+}
+
+input.form-btn {
+  border: 2px solid #f4defa;
+  background: black;
+  color: #f4defa;
+  width: 100px;
+  border-radius: 0px;
+  text-transform: uppercase;
+  padding: 8px 16px 8px 16px;
+  text-align: center;
+  font-size: 0.8em;
+  letter-spacing: 0.8px;
+}
+
+input[type="text"] {
+  background: black;
+  border: 2px solid #f4defa;
+  color: #f4defa;
+  font-size: 1em;
+  padding: 12px;
+  width: 250px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 900px) {
@@ -245,4 +290,45 @@ canvas {
     font-weight   : 400;
     padding       : 32px;
   }
+
+  #contributor-call, #propagator-about {
+    padding: 96px 64px 64px 64px;
+  }
+
+  #call-content, #call-form {
+    width: 100%;
+  }
+
+  #call-form {
+    margin-top: 64px;
+  }
+
+  #contributor-call-inner, #propagator-about-inner {
+    padding: 32px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 24px;
+    font-size: 1.5em;
+  }
+
+  input.form-btn {
+    color: black;
+    background: #f4defa;
+    width: 100%;
+    height: 64px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    font-size: 1.3em;
+  }
+
+  #disclosure {
+    text-align: center;
+  }
+
+  p#interest {
+    text-align: center;
+  }
+
 }
