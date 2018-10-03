@@ -155,6 +155,7 @@ canvas {
   padding: 64px;
   border: 4px solid #f4defa;
   overflow-y: auto;
+  background: black;
 }
 
 #contributor-call-inner > h1 {
