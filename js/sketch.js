@@ -83,9 +83,9 @@ function render() {
 	ctx.fillStyle = "#a884a6";
 	metaball.update(canvas.width, canvas.height, 14);
 
-	setTimeout(function() {
+	// setTimeout(function() {
 		requestAnimationFrame(render);
-	}, 500 / 30);
+	// }, 500 / 30);
 
 }
 
