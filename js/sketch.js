@@ -2,7 +2,10 @@
 
 let canvas;
 let ctx;
-let metaball; 
+let metaball;
+let about;
+let call;
+let content;
 
 init();
 
@@ -12,9 +15,23 @@ function init() {
 	canvas.width  = window.innerWidth;
 	canvas.height = window.innerHeight;
 	ctx           = canvas.getContext('2d');
+
+	about = document.getElementById('propagator-about');
+  call = document.getElementById('contributor-call');
+  content = document.getElementById('content-container');
   
 	metaball = new Metaball(50, ctx, canvas.width, canvas.height);
 	render();
+
+	document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    
+    if (evt.keyCode == 27 && (about.style.display === 'block' || call.style.display === 'block')) {
+        about.style.display = "none";
+        call.style.display = "none";
+        content.style.filter = "none";
+    }
+	};
 }
 
 // -------------------------------------------------------
@@ -38,9 +55,6 @@ function getRandomColor() {
 
 // -------------------------------------------------------
 function toggleAboutVisible(setToOpen) {
-	let about = document.getElementById('propagator-about');
-	let content = document.getElementById('content-container');
-
 	if (setToOpen) {
 		about.style.display = "block";
 		content.style.filter = "blur(16px)";
@@ -53,9 +67,6 @@ function toggleAboutVisible(setToOpen) {
 
 // -------------------------------------------------------
 function toggleCallVisible(setToOpen) {
-	let call = document.getElementById('contributor-call');
-	let content = document.getElementById('content-container');
-	
 	if (setToOpen) {
 		content.style.filter = "blur(16px)";
 		call.style.display = "block";
