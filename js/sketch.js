@@ -81,8 +81,15 @@ function render() {
 	ctx.fillStyle = "#060109";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	ctx.fillStyle = "#a884a6";
-	metaball.update(canvas.width, canvas.height, 16);
-	requestAnimationFrame(render);
+	metaball.update(canvas.width, canvas.height, 12);
+
+	setTimeout(function() {
+		requestAnimationFrame(render);
+
+		// ... Code for Drawing the Frame ...
+
+	}, 1000 / 30);
+
 }
 
 // -------------------------------------------------------
@@ -124,23 +131,22 @@ function Metaball(size, ctx, width, height) {
 				} 
         
 				if (s < this.threshold) {
-					this.ctx.fillRect(x, y, Math.random() * 100, 0.8);
+					this.ctx.fillRect(x, y, 16, 1);
 				} else {
-					this.ctx.fillRect(x + Math.random(-8, 8), y + Math.random(-8, 8), 1,10);
+					this.ctx.fillRect(x + Math.random(-8, 8), y + Math.random(-8, 8), 1, 6);
 				}
 			}
 		}
-    
+	
 		for (let i = 0; i < this.balls.length; i++) {
+			this.balls[i].center[0] += this.balls[i].direction[0];
+			this.balls[i].center[1] += this.balls[i].direction[1];
 			this.checkBounds(this.balls[i]);
     }
   }
   
   // -------------------------------------------------------
   this.checkBounds = function(ball) {
-    ball.center[0] += ball.direction[0];
-    ball.center[1] += ball.direction[1];
-    
     if (ball.center[0] < 0) {
       ball.center[0] = this.width ;
     } else if (ball.center[1] > this.width) {
