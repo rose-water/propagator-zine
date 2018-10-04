@@ -81,14 +81,11 @@ function render() {
 	ctx.fillStyle = "#060109";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	ctx.fillStyle = "#a884a6";
-	metaball.update(canvas.width, canvas.height, 12);
+	metaball.update(canvas.width, canvas.height, 14);
 
 	setTimeout(function() {
 		requestAnimationFrame(render);
-
-		// ... Code for Drawing the Frame ...
-
-	}, 1000 / 30);
+	}, 500 / 30);
 
 }
 
@@ -133,7 +130,7 @@ function Metaball(size, ctx, width, height) {
 				if (s < this.threshold) {
 					this.ctx.fillRect(x, y, 16, 1);
 				} else {
-					this.ctx.fillRect(x + Math.random(-8, 8), y + Math.random(-8, 8), 1, 6);
+					this.ctx.fillRect(x + Math.random(-8, 8), y + Math.random(-8, 8), 1, 8);
 				}
 			}
 		}
